@@ -1,0 +1,6 @@
+{
+    "description": "An example package.",
+    "name": "example",
+    "script": "example.gd",
+    "version": "v1.0"
+}

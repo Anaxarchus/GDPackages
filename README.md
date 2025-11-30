@@ -69,7 +69,7 @@ A lightweight, opinionated framework for creating modular, isolated packages in 
 ## Example
 
 ```gdscript
-var pkg = PackageOrchestrator.load_package("res://packages/MyPackage")
+var pkg = PackageManager.load_package("res://packages/MyPackage")
 PackageManager.unload_package("my_package")
 var pkgs = PackageManager.load_packages_in_directory("res://packages")
 PackageManager.unload_packages_in_group("res://packages")
