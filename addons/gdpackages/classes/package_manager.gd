@@ -98,20 +98,18 @@ static func load_package(directory: String, group: String = "") -> void:
     # book keeping.
     var package_name: String = config.get("name", "")
     packages[package_name] = root
-    if group.is_empty():
-        # we will fallback to the directory grouping.
-        group = directory
-    package_groups.get_or_add(group, PackedStringArray()).append(package_name)
+    if !group.is_empty():
+        package_groups.get_or_add(group, PackedStringArray()).append(package_name)
 
     # life cycle stuff.
     root._config = config
     root._loaded()
 
 ## Initializes all packages in the given directory.
-static func load_packages_in_directory(directory_path: String) -> void:
+static func load_packages_in_directory(directory_path: String, group: String = directory_path) -> void:
     var dirs := DirAccess.get_directories_at(directory_path)
     for dir in dirs:
-        load_package(directory_path.path_join(dir), directory_path)
+        load_package(directory_path.path_join(dir), group)
 
 ## Unloads the package with the given name.
 static func unload_package(package_name: String) -> void:
