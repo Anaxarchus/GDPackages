@@ -14,4 +14,6 @@ export_presets.cfg
 data_*/
 mono_crash.*.json
 
-.DS_STORE
+# macOS Finder junk files
+.DS_Store
+**/.DS_Store
