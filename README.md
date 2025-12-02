@@ -72,8 +72,8 @@ A lightweight, opinionated framework for creating modular, isolated packages in 
 ```gdscript
 var pkg = PackageManager.load_package("res://packages/MyPackage")
 PackageManager.unload_package("my_package")
-var pkgs = PackageManager.load_packages_in_directory("res://packages")
-PackageManager.unload_packages_in_group("res://packages")
+var pkgs = PackageManager.load_packages_in_directory("res://packages", "MyPackageGroup")
+PackageManager.unload_packages_in_group("MyPackageGroup")
 ```
 
 ---
